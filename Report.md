@@ -52,11 +52,11 @@ GAMMA = 0.99            - Same as in the course
 TAU = 0.005             - Changed from 1e-3 to 0.005
 LR_ACTOR = 3e-4         - Changed from 1e-4 to 3e-4
 LR_CRITIC = 3e-4        - Same as in the course
-WEIGHT_DECAY = 0        - Put to 0
+WEIGHT_DECAY = 0        - Changed from 0.0001 to 0
 
 Most of these values where tested one after the others to see how it impacted the training, the values were borrowed from this code from OpenAI: ([TD3](https://github.com/sfujim/TD3))
 
-Note that the Weight_Decay had the major impact on the training. Basically with the original value of 0.00001 the model was not training (avg score of 2 over 500 iterations), once set to 0 it started training.
+Note that the Weight_Decay had the major impact on the training. Basically with the original value of 0.0001 the model was not training (avg score of 2 over 500 iterations), once set to 0 it started training.
 
 Another major impact was to remove the maximum numbers of steps to train the agent, in the new implementation the agent train until it is able to get done from the environment (no limit of steps).
 
@@ -70,7 +70,7 @@ For the sake of learning more, we kept the algorithm continue running until the 
 
 Also here is a video of the game as played by the agent after being trained for 1000 episodes 
 
-<video width="1290" height="762" controls>
+<video width="1292" height="784" controls>
   <source src="P2_Reacher.mp4" type="video/mp4">
 </video>
 

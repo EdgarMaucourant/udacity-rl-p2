@@ -15,10 +15,10 @@ Here are the details of the environment
 | Observation Shape |  (33,)    |
 | Solving score     |  30       | 
 
-Here is an example video of an agent trained for 1000 iterations able to solve the experiment with a score of ... :
+Here is an example video of an agent trained for 1000 iterations able to solve the experiment with a score of 39 :
 
-<video width="1290" height="762" controls>
-  <source src="P2_RoboticArm.mp4" type="video/mp4">
+<video width="1292" height="784" controls>
+  <source src="P2_Reacher.mp4" type="video/mp4">
 </video>
 
 Please follow the instructions below to train your agents using this repo. Also please look into the [Report](Report.md) file to get more info about how the code is structured and how the model behave under training.
