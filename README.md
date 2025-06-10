@@ -1,9 +1,11 @@
 # Project Details
-This repository hosts the submited project of Edgar Maucourant for the grading project of the Value-Based Methods module of the Deep Reinforcement Learning Nanodegree at Udacity.
+This repository hosts the submited project of Edgar Maucourant for the grading project of the Policy-Based Methods module of the Deep Reinforcement Learning Nanodegree at Udacity.
 
-It uses Unity ML-Agents and Python scripts to train an agent that is simulating a two parts robotic arm to reach a target. Each time the arm is able to aim to the moving target it receives a rewards of 1, othwerwise it receives 0.
+It uses Unity ML-Agents and Python scripts to train an agent and environment that is simulating a two parts robotic arm to reach a target. Each time the arm is able to aim to the moving target it receives a reward of 1, othwerwise it receives 0.
 
-Note that this environment uses a single arm, another environment including 20 arms to train faster, however this has not been used in this experiment (see the [Report](Report.md) for future improvements).
+The agent and environment are provided as a Unity "Game" called Reacher.
+
+Note that this environment uses a single arm, another environment includes 20 arms to train faster, however this has not been used in this experiment (see the [Report](Report.md) for future improvements).
 
 Here are the details of the environment
 
@@ -13,7 +15,7 @@ Here are the details of the environment
 | Observation Shape |  (33,)    |
 | Solving score     |  30       | 
 
-Here is an example video of an agent trained for 1000 iterations able to solve the experiment with ... bananas collected:
+Here is an example video of an agent trained for 1000 iterations able to solve the experiment with a score of ... :
 
 <video width="1290" height="762" controls>
   <source src="P2_RoboticArm.mp4" type="video/mp4">
@@ -61,16 +63,17 @@ jupyter notebook Continuous_Control.ipynb
 
 2. Make sure your change the kernel to the drlnd kernel created before, use the Kernel menu and click "Change Kernel" then choose drlnd
 
-3. Scroll to the section *4. It's Your Turn!* and run the cell importing the dependencies then the one defining the function "ddpg". This function is used to train the agent using the hyperparameters provided. Note that in our cases we used the default parameters for Number of episodes (1000), max steps (1000).
+3. Scroll to the section *4. It's Your Turn!* and run the cell importing the dependencies then the one defining the function "ddpg". This function is used to train the agent using the hyperparameters provided. Note that in our cases we used the default parameters for Number of episodes (1000) and max steps (1000). Note also that the max steps is not used in the final code.
 
-4. Run the next cell to import the required dependencies, and create a new environment based on the Bananas game (note that this is where you want to update the reference to the executable if you don't run on Windows). 
+4. Run the next cell to import the required dependencies, and create a new environment based on the Reacher game (this is where you want to update the reference to the executable if you don't run on Windows). 
 
 This cell also create the Agent to be trained, that agent is based on the DDPG Algorithm and expect the state size and action size as input (plus a seed for randomizing the initialization). For more details about this agent please look at the [Report](Report.md).
 
-5. Run the next cell to start the training. After some time (depending on your machine, mine took about 10 minutes), your model will be trained and the scores over iterations will be plotted. Note that while training you should see the game running (on windows at least) and the score increasing. If after 500 iterations the score did not increase you might want to review the parameters you provided to the dqn function.
+5. Run the next cell to start the training. After some time (depending on your machine, mine took about 2 hours), your model will be trained and the scores over iterations will be plotted. While training you should see the game running (on windows at least) and the score increasing. 
+If after 500 iterations the score did not increase you might want to review the parameters you provided to the ddpg agent (see the [ddpg_agent.py](ddpg_agent.py)).
 
-*Note:* the last parameter passed to the dqn function in that cell "13" is the average score to obtain over 100 attempts to succeed the training. It is based on the requirement of the project.
+*Note:* the code expect an average of "30" as a score over the last 100 attempts. It is based on the requirement of the project.
 
 ## Instructions to see the agent playing
 
-The last cell in the Jupyter notebook shows how to run one episode with a model trained (the pre-trained weights are provided), if you run the cells (after having imported the dependency and created the env, see step 3 and 4 above) you should be able to see the game played by the agent (if you run this code locally on a Windows machine). See how much you agent can get! The videos at the top of this document shows the agent running with the pre-trained weights provided achieving a score of 17.
+The last cell in the Jupyter notebook shows how to run one episode with a model trained (the pre-trained weights are provided), if you run the cells (after having imported the dependency and created the env, see step 3 and 4 above) you should be able to see the game played by the agent (if you run this code locally on a Windows machine). See how much you agent can get! The videos at the top of this document shows the agent running with the pre-trained weights provided achieving a score of XX.
